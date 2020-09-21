@@ -40,10 +40,50 @@
      *  Test        : Execute run.php to test your implementation.
      * 
      */
+    error_reporting(E_ALL);
+    ini_set("display_errors","On");
 
     
     class Counter {
-        
-        
+        public $count;
+
+        public function __construct($count = false) {
+
+            if (strlen($count) > 0)
+            {
+                $this->count = $count;
+            }
+             else {
+                $this->count = 0;
+            }
+
+
+          }
+
+
+        public function count($count= false)
+        {
+
+            if (strlen($count) > 0){
+
+                $this->count = $count + 1;
+
+            } else {
+                $this->count++;
+            }
+
+
+        }
+
+        public function get()
+        {
+            return $this->count;
+
+        }
+        public function reset()
+        {
+            $this->count=0;
+
+        }
 
     }

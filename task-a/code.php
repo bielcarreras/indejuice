@@ -20,10 +20,6 @@
     
     function containsWord($word, $mystring){
         
-        if(strpos($mystring, $word) !== false){
-            return true ;
-        } else{
-            return false;
-        }
+        return !!preg_match('#\\b' . preg_quote($word, '#') . '\\b#i', $mystring);
 
     }
